@@ -66,6 +66,10 @@
 
             const newTaskName = document.querySelector(".js-input").value.trim();
 
+            if(newTaskName === ""){
+                return;
+            };
+
             tasks.push({
                 name: newTaskName,
                 done: false,
