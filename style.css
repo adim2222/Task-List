@@ -36,6 +36,7 @@ form {
 
 .done {
     background-color: lime;
+    transition: 0.3s;
 } .done:hover {
     background-color: green;
 }
@@ -43,6 +44,7 @@ form {
 .delete {
     background-color: red;
     color: white;
+    transition: 0.3s;
 } .delete:hover {
     background-color: crimson;
 }
@@ -52,4 +54,9 @@ form {
     height: 50px;
     font-size: 30px;
     border-radius: 10px;
+}
+
+.js-button:hover {
+    transition: 0.3s;
+    transform: scale(1.2);
 }
