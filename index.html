@@ -9,11 +9,17 @@
     <title>Lista zadań</title>
 </head>
 <body>
+    <div class="header"><h1>Lista zadań</h1></div>
     <form class="js-form">
-        Nowe zadanie: <input class="js-input" type="text">
-        <button class="js-button">Utwórz</button><br>
-        <div class="js-buttons-div"></div>
+        <div class="form__header">Dodaj nowe zadanie</div>
+        <div class="input__div">
+            <input class="js-input" type="text">
+            <button class="js-button add-task">Utwórz</button>
+        </div>
     </form>
-    <ul class="js-list"></ul>
+    <div class="main">
+        <div class="js-buttons-div function__buttons"></div>
+        <ul class="js-list"></ul>
+    </div>
 </body>
 </html>

@@ -44,12 +44,14 @@
                 <button class="js-delete delete">🗑</button>
                 <button class="js-done done">✓</button>
             </li>
+            <hr ${(task.done && hideCompleted) ? "style=\"display: none\"" : ""}>
             `
         };
 
         document.querySelector(".js-list").innerHTML = htmlString;
 
         bindToggleDoneEvents();
+        bindRemoveEvents();
     };
 
     const renderButtons = () => {
@@ -57,8 +59,8 @@
         let htmlString = "";
 
         htmlString += `
-        <button class="js-hide">${hideCompleted ? "Pokaż" : "Ukryj"} Ukończone</button>
-        <button class="js-complete" ${allTasksDone ? "disabled" : ""}>Ukończ wszystkie</button>
+        <button class="js-hide hide">${hideCompleted ? "Pokaż" : "Ukryj"} Ukończone</button>
+        <button class="js-complete complete" ${allTasksDone ? "disabled" : ""}>Ukończ wszystkie</button>
         `;
 
         document.querySelector(".js-buttons-div").innerHTML = htmlString;
@@ -154,7 +156,6 @@
         renderTasks();
         renderButtons();
 
-        bindRemoveEvents();
         bindButtonEvents();
         bindAddTaskEvents();
     };

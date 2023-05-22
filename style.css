@@ -1,42 +1,69 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
     margin: 0px;
-    background-color: rgb(48, 48, 48);
+    background-color: lightgray;
 }
 
 ul {
-    margin: 120px;
-    border: solid black 1px;
-    border-radius: 10px;
-    padding: 10px;
-    text-align: center;
+    background-color: white;
     list-style-type: none;
+    margin: 0px;
+    padding: 20px;
+    padding-top: 0px;
+}
+
+h1 {
+    font-weight: bold;
 }
 
 form {
     margin: auto;
     margin-top: 20px;
-    text-align: center;
-    background-color: gray;
-    color: white;
-    border: solid black 1px;
-    border-radius: 10px;
-    padding: 10px;
     max-width: 800px;
+    background-color: white;
+}
+
+.form__header {
+    font-weight: bold;
+    font-size: 22px;
+    padding: 20px;
+    border-bottom: solid 1px gray;
+}
+
+.input__div {
+    padding: 20px;
+    display: flex;
+}
+
+input {
+    flex-grow: 2;
+    height: 30px;
+    font-size: 28px;
+}
+
+.add-task {
+    margin-left: 20px;
+    background-color: teal;
+    color: white;
+    border: none;
+    width: 100px;
+    font-size: 16px;
 }
 
 .list--item {
-    margin: 10px;
     color: black;
     font-size: 32px;
     background-color: white;
     border-radius: 10px;
     padding: 3px;
+    display: flex;
+    justify-content: space-between;
 }
 
 .done {
     background-color: lime;
     transition: 0.3s;
+    order: -1;
 } .done:hover {
     background-color: green;
 }
@@ -45,6 +72,7 @@ form {
     background-color: red;
     color: white;
     transition: 0.3s;
+    order: 1;
 } .delete:hover {
     background-color: crimson;
 }
@@ -59,4 +87,43 @@ form {
 .js-button:hover {
     transition: 0.3s;
     transform: scale(1.2);
+}
+
+.function__buttons {
+    background-color: white;
+    margin-top: 20px;
+    text-align: end;
+    padding: 20px;
+}
+
+.main {
+    margin: auto;
+    max-width: 800px;
+}
+
+.header {
+    margin: auto;
+    max-width: 800px;
+}
+
+span {
+    width: 80%;
+}
+
+.hide {
+    background-color: white;
+    color: teal;
+    border: none;
+    transition: 0.3s;
+} .hide:hover {
+    color: black;
+}
+
+.complete {
+    background-color: white;
+    color: teal;
+    border: none;
+    transition: 0.3s;
+} .complete:hover {
+    color: black;
 }
