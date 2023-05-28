@@ -41,8 +41,8 @@
             htmlString += `
             <li class="list--item" ${(task.done && hideCompleted) ? "style=\"display: none\"" : ""}>
                 <span ${task.done ? " style=\"text-decoration: line-through\"" : ""}>${task.name}</span>
-                <button class="js-delete delete">🗑</button>
-                <button class="js-done done">✓</button>
+                <button class="js-delete delete task__button">🗑</button>
+                <button class="js-done done task__button">✓</button>
             </li>
             <hr ${(task.done && hideCompleted) ? "style=\"display: none\"" : ""}>
             `
@@ -147,6 +147,8 @@
                 ...tasks,
                 {name: newTaskName, done: false}
             ];
+
+            document.querySelector(".js-input").value = "";
 
             renderTasks();
         });
