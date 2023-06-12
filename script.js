@@ -56,7 +56,7 @@
 
     const renderButtons = () => {
 
-        let htmlString = "";
+        let htmlString = "<div class=\"list__label\">Lista zadań</div>";
 
         htmlString += `
         <button class="js-hide hide">${hideCompleted ? "Pokaż" : "Ukryj"} Ukończone</button>
