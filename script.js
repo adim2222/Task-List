@@ -15,23 +15,6 @@
     ];
 
     let hideCompleted = false;
-    let allTasksDone = false;
-
-    const allDoneCheck = () => {
-        let amount = 0;
-        for(let i = 0; i < tasks.length; i++){
-            if(tasks[i].done === true){
-                amount++
-            };
-        };
-
-        if(amount === tasks.length){
-            allTasksDone = true;
-        }else{
-            allTasksDone = false;
-        };
-        renderButtons();
-    };
 
     const renderTasks = () => {
 
@@ -60,7 +43,7 @@
 
         htmlString += `
         <button class="js-hide hide">${hideCompleted ? "Pokaż" : "Ukryj"} Ukończone</button>
-        <button class="js-complete complete" ${allTasksDone ? "disabled" : ""}>Ukończ wszystkie</button>
+        <button class="js-complete complete" ${ tasks.every(({done}) => done) ? "disabled" : ""}>Ukończ wszystkie</button>
         `;
 
         document.querySelector(".js-buttons-div").innerHTML = htmlString;
@@ -80,7 +63,6 @@
                 };
             };
             renderTasks();
-            allDoneCheck();
             renderButtons();
         });
 
@@ -108,7 +90,6 @@
                     },
                     ...tasks.slice(index + 1),
                 ];
-                allDoneCheck();
                 renderTasks();
             });
         })
