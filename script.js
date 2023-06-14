@@ -42,7 +42,7 @@
 
         htmlString += `
         <button class="js-hide hide">${hideCompleted ? "Pokaż" : "Ukryj"} Ukończone</button>
-        <button ${tasks.every(({done}) => done) ? " disabled" : ""} class="js-complete complete">Ukończ wszystkie</button>
+        <button class="js-complete complete" ${tasks.every(({done}) => done) ? "disabled" : ""}>Ukończ wszystkie</button>
         `;
 
         document.querySelector(".js-buttons-div").innerHTML = htmlString;

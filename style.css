@@ -144,6 +144,10 @@ span {
     font-size: 20px;
 }
 
+.complete:disabled {
+    color: gray;
+}
+
 @media screen and (max-width: 540px) {
     .input__div{
         flex-wrap: wrap;
@@ -153,5 +157,14 @@ span {
         height: 30px;
         margin: 0px;
         margin-top: 10px;
+    }
+    .function__buttons{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        text-align: center;
+    }
+    .list__label{
+        width: 100%;
     }
 }
