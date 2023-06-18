@@ -56,33 +56,43 @@
 
         hideButton.addEventListener("click", (event) => {
             event.preventDefault();
-
-            hideCompleted = !hideCompleted;
-
-            renderButtons();
-            renderTasks();
+            hideTasks();
         });
     };
 
+    const hideTasks = () => {
+        hideCompleted = !hideCompleted;
+
+        renderButtons();
+        renderTasks();
+    };
+
     const completeButtonEvents = () => {
+        
         const completeButton = document.querySelector(".js-complete");
 
         completeButton.addEventListener("click", (event) => {
             event.preventDefault();
-            for(let i = 0; i < tasks.length; i++){
-                if(tasks[i].done === false){
-                    tasks[i].done = true;
-                };
-            };
-            renderButtons();
-            renderTasks();
+            completeAllTasks();
         });
     };
 
+    const completeAllTasks = () => {
+        for(let i = 0; i < tasks.length; i++){
+            if(tasks[i].done === false){
+                tasks[i].done = true;
+            };
+        };
+        renderButtons();
+        renderTasks();
+    };
+
     const bindToggleDoneEvents = () => {
-
         const doneButtons = document.querySelectorAll(".js-done");
+        toggleDone(doneButtons);
+    };
 
+    const toggleDone = (doneButtons) => {
         doneButtons.forEach((doneButton, index) => {
             doneButton.addEventListener("click", () => {
                 tasks = [
@@ -105,13 +115,17 @@
 
         deleteButtons.forEach((deleteButton, index) => {
             deleteButton.addEventListener("click", () => {
-                tasks = [
-                    ...tasks.slice(0,index),
-                    ...tasks.slice(index + 1)
-                ];
-                renderTasks();
+                removeTask(index);
             });
         });
+    };
+
+    const removeTask = (index) => {
+        tasks = [
+            ...tasks.slice(0,index),
+            ...tasks.slice(index + 1)
+        ];
+        renderTasks();
     };
 
     const bindAddTaskEvents = () => {
@@ -119,24 +133,22 @@
         const newTask = document.querySelector(".js-button");
 
         newTask.addEventListener("click", (event) => {
-
             event.preventDefault();
+            addTask();
+        });
+    };
 
-            const newTaskName = document.querySelector(".js-input").value.trim();
-
+    const addTask = () => {
+        const newTaskName = document.querySelector(".js-input").value.trim();
             if(newTaskName === ""){
                 return;
             };
-
             tasks = [
                 ...tasks,
                 {name: newTaskName, done: false}
             ];
-
             document.querySelector(".js-input").value = "";
-
             renderTasks();
-        });
     };
 
     const init = () => {
