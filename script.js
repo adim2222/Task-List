@@ -134,15 +134,15 @@
 
         newTask.addEventListener("click", (event) => {
             event.preventDefault();
-            addTask();
-        });
-    };
-
-    const addTask = () => {
-        const newTaskName = document.querySelector(".js-input").value.trim();
+            const newTaskName = document.querySelector(".js-input").value.trim();
             if(newTaskName === ""){
                 return;
             };
+            addTask(newTaskName);
+        });
+    };
+
+    const addTask = (newTaskName) => {
             tasks = [
                 ...tasks,
                 {name: newTaskName, done: false}
