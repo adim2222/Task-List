@@ -139,6 +139,7 @@
                 return;
             };
             addTask(newTaskName);
+            document.querySelector(".js-input").value = "";
         });
     };
 
@@ -147,7 +148,6 @@
                 ...tasks,
                 {name: newTaskName, done: false}
             ];
-            document.querySelector(".js-input").value = "";
             renderTasks();
     };
 
